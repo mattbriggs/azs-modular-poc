@@ -1,5 +1,5 @@
-- name: Articles
+- name: Azure Stack Hub modular documentation
   href: articles/
-- name: Api Documentation
+- name: Api Documentation for docs
   href: api/
   homepage: api/index.md
