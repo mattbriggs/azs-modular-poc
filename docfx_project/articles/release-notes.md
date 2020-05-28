@@ -14,7 +14,7 @@ This article describes the contents of Azure Stack Hub update packages. The upda
 
 To access release notes for a different version, use the version selector dropdown above the table of contents on the left.
 
-To access an RSS feed of the release notes, see [release-notes-2002.rss](/RSS/release-note-2002.rss)
+To access an RSS feed of the release notes, see [release-notes-2002.rss](../RSS/release-note-2002.rss)
 
 ## Update type
 

@@ -28,6 +28,12 @@
           "toc.yml",
           "*.md"
         ]
+      },
+      {
+        "files": [
+          "rss/**.rss",
+          "rss/**.md"
+        ]
       }
     ],
     "resource": [
