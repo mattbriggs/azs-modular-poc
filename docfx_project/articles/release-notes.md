@@ -8,11 +8,13 @@ ms.topic: overview #Required
 ms.date: #Required; mm/dd/yyyy format.
 ---
 
-# Relase notes for Azure Stack Hub
+# Release notes for Azure Stack Hub
 
 This article describes the contents of Azure Stack Hub update packages. The update includes improvements and fixes for the latest release of Azure Stack Hub.
 
 To access release notes for a different version, use the version selector dropdown above the table of contents on the left.
+
+To access an RSS feed of the release notes, see [release-notes-2002.rss](/RSS/release-note-2002.rss)
 
 ## Update type
 
