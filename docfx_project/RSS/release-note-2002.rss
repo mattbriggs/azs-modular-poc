@@ -1,0 +1,55 @@
+  <?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Azure Stack Hub Release Notes</title>
+<title>Release note 1</title>
+<link>https://github.com/mattbriggs/azs-modular-poc/blob/master/docfx_project/articles/release-notes.md</link>
+<description>
+<p>Area: Azure-Stack-Hub-Area</p>
+
+<p>Release: 2020_2</p>
+
+<p>Type: Improvement</p>
+
+<p>Overview paragraph.</p>
+
+<p>Body paragraph.</p>
+
+<p>Body paragraph.</p>
+</description>
+<title>Release note 2</title>
+<link>https://github.com/mattbriggs/azs-modular-poc/blob/master/docfx_project/articles/release-notes.md</link>
+</description>
+<p>Area: Azure-Stack-Hub-Area</p>
+
+<p>Release: 2020_2</p>
+
+<p>Type: Improvement</p>
+
+<p>Overview paragraph.</p>
+
+<p>Body paragraph.</p>
+
+<p>Body paragraph.</p>
+
+<title>Release note 3</title>
+<link>https://github.com/mattbriggs/azs-modular-poc/blob/master/docfx_project/articles/release-notes.md</link>
+<description>
+<p>Area: Azure-Stack-Hub-Area</p>
+
+<p>Release: 2020_2</p>
+
+<p>Type: Improvement</p>
+
+<p>Overview paragraph.</p>
+
+<p>Body paragraph.</p>
+
+<p>Body paragraph.</p>
+</description>
+  </item>
+</channel>
+
+</rss>
+
