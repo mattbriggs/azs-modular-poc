@@ -15,6 +15,7 @@ import datetime
 from bs4 import BeautifulSoup
 import markdown
 import rfeed as rss
+import uuid
 
 
 def get_text_from_file(path):
@@ -75,31 +76,13 @@ def clear_docs_repo_metadata(inrawbody, d_format="html"):
     return out_file
 
 
-def dirt_convert_rss_obj(inbody):
+def convert_rss_obj(inbody):
     '''Provisional function to return RSS object for each include.'''
-    soup = BeautifulSoup(inbody, 'html.parser')
-    rss_title = soup.findAll("h3")[0]
-    para = soup.findAll("p")
-    bodytext = ""
-    rss_release = ""
-    rss_type = ""
-    for p in para:
-        if p.text.find("Area:"):
-            rss_area = p.text[5:]
-        elif p.text.find("Release:"):
-            rss_release = p.text[8:]
-        elif p.text.find("Type:"):
-            rss_type = p.text[6:]
-        else:
-            bodytext + "<p>" + p.text + r"<\p>"
-    rss.Item(
-        title = rss_title,
-        link = "http://www.example.com/articles/2",
-        description = "<p>Release: {} Type: {}</p>{}".format(rss_release, rss_type, bodytext),
-        author = rss_area,
-        guid = rss.Guid("http://www.example.com/articles/2"),
-        pubDate = datetime.datetime(2014, 12, 30, 14, 15))
-    return rss.Item
+    # soup = BeautifulSoup(inbody, 'html.parser')
+    # description = soup.prettify()
+    this_item = str(uuid.uuid4())
+    item = rss.Item(description = inbody, guid = rss.Guid(this_item))
+    return item
 
 
 def main():
@@ -108,20 +91,19 @@ def main():
     out_items = []
     for i in includes:
         body = get_text_from_file(i)
-        body_html = clear_docs_repo_metadata(body, d_format="html")
-        out_items.append(dirt_convert_rss_obj(body_html))
+        body_html = clear_docs_repo_metadata(body, d_format="txt")
+        out_items.append(convert_rss_obj(body_html))
 
-    print out_items
+    feed = rss.Feed(
+        title = "Example RSS Feed",
+        link = "http://docs.microsoft.com/azure-stack/rss",
+        description = "Release notes for Azure Stack Hub.",
+        language = "en-US",
+        lastBuildDate = datetime.datetime.now(),
+        items = out_items
+    )
 
-    # feed = rss.Feed(
-    #     title = "Sample RSS Feed",
-    #     link = "http://www.example.com/rss",
-    #     description = "This is an example of how to use rfeed to generate an RSS 2.0 feed",
-    #     language = "en-US",
-    #     lastBuildDate = datetime.datetime.now(),
-    #     items = out_items)
-
-    # print(feed.rss())
+    print(feed.rss())
 
 if __name__ == "__main__":
     main()

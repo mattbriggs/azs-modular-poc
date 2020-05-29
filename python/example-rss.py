@@ -19,12 +19,14 @@ item2 = rss.Item(
     guid = rss.Guid("http://www.example.com/articles/2"),
     pubDate = datetime.datetime(2014, 12, 30, 14, 15))
 
+items = [item1, item2]
+
 feed = rss.Feed(
     title = "Sample RSS Feed",
     link = "http://www.example.com/rss",
     description = "This is an example of how to use rfeed to generate an RSS 2.0 feed",
     language = "en-US",
     lastBuildDate = datetime.datetime.now(),
-    items = [item1, item2])
+    items = items)
 
 print(feed.rss())
