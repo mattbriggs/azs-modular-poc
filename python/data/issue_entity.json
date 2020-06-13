@@ -1,0 +1,15 @@
+{
+    "id": "1",
+    "feature": "Storage",
+    "title": "An issue with storage one.",
+    "contact": "first last",
+    "tracking": "66666666",
+    "audience": "Operator",
+    "applicable": "This issue applies to all supported releases.",
+    "cause": "You cannot view permissions to your subscription using the Azure Stack Hub portals.",
+    "remediation": "If you have resources running on these two subscriptions, recreate them in user subscriptions.",
+    "occurance": "Common",
+    "datefiled": "5/15/2020",
+    "datereviewed": "6/11/2020",
+    "status": "Ready"
+}

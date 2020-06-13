@@ -140,3 +140,6 @@ dmypy.json
 /**/obj/
 _site
 
+# python connection strings and such (kept locally)
+
+config.py

@@ -4,9 +4,10 @@ ms.service: azure-stack
 ms.topic: include
 ms.date: 05/27/2020
 ms.author: mabrigg
+ms.custom: []
 ---
 
-### Release note 1
+### Issue title
 
 Area: Azure-Stack-Hub-Area
 
@@ -19,3 +20,9 @@ Overview paragraph.
 Body paragraph.
 
 Body paragraph.
+
+
+- Applicable: This issue applies to all supported releases.
+- Cause: You cannot view permissions to your subscription using the Azure Stack Hub portals.
+- Remediation: Use [PowerShell to verify permissions](/powershell/module/azurerm.resources/get-azurermroleassignment).
+- Occurrence: Common
