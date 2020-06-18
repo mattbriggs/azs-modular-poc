@@ -1,13 +1,11 @@
-# Current Items
-
-
 ## Update
 
 ### Alert for invalidate time source
 
-After applying the 2002 update, an alert for an "Invalid Time Source" may incorrectly appear in the Administrator portal. This false-positive alert can be ignored and will be fixed in an upcoming release. 
-
-For other known Azure Stack Hub update issues, please see [Troubleshooting Updates in Azure Stack Hub](azure-stack-troubleshooting.md).
+- Applicable: This issue applies to release 2002 release.
+- Cause: After applying the 2002 update, an alert for an "Invalid Time Source" may incorrectly appear in the Administrator portal. This false-positive alert can be ignored and will be fixed in an upcoming release. 
+- Remediation: For other known Azure Stack Hub update issues, please see [Troubleshooting Updates in Azure Stack Hub](azure-stack-troubleshooting.md).
+- Occurrence: Common
 
 ## Portal
 
@@ -94,13 +92,15 @@ For other known Azure Stack Hub update issues, please see [Troubleshooting Updat
 ### Virtual Network Gateway
 
 - Applicable: This issue applies to all supported releases.
-- Cause: The documentation links in the overview page of Virtual Network gateway link to Azure-specific documentation instead of Azure Stack Hub. Use the following links for the Azure Stack Hub documentation:
+- Cause: The documentation links in the overview page of Virtual Network gateway link to Azure-specific documentation instead of Azure Stack Hub. 
+- Remediation: Use the following links for the Azure Stack Hub documentation:
 
   - [Gateway SKUs](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
   - [Highly Available Connections](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
   - [Configure BGP on Azure Stack Hub](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
   - [ExpressRoute circuits](azure-stack-connect-expressroute.md)
   - [Specify custom IPsec/IKE policies](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
+- Occurrence: Common
 
 ## Compute
 
@@ -108,19 +108,23 @@ For other known Azure Stack Hub update issues, please see [Troubleshooting Updat
 
 - Applicable: This issue applies to the 2002 release.
 - Cause: There is a portal bug that prevents VMSS creation with the Standard_DS2_v2 VM size. Creating one will error out with: "{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"BadRequest","message":"{\r\n \"error\": {\r\n \"code\": \"NetworkProfileValidationError\",\r\n \"message\": \"Virtual Machine size Standard_DS2_v2 is not in the allowed list of VM sizes for accelerated networking to be enabled on the VM at index 0 for VM Scale Set /subscriptions/x/resourceGroups/RGVMSS/providers/Microsoft.Compute/virtualMachineScaleSets/vmss. Allowed sizes: .\"\r\n }\r\n}"}]}"
-Remediation: Create a VMSS with PowerShell or a resource manager template.
+- Remediation: Create a VMSS with PowerShell or a resource manager template.
+- Occurrence: Common
 
 ### VM overview blade does not show correct computer name
 
 - Applicable: This issue applies to all releases.
 - Cause: When viewing details of a VM in the overview blade, the computer name shows as **(not available)**. This is by design for VMs created from specialized disks/disk snapshots.
 - Remediation: View the **Properties** blade under **Settings**.
+- Occurrence: NA
 
 ### NVv4 VM size on portal
 
 - Applicable: This issue applies to 2002 and later.
 - Cause: When going through the VM creation experience, you will see the VM size: NV4as_v4. Customers who have the hardware required for the AMD Mi25-based Azure Stack Hub GPU preview are able to have a successful VM deployment. All other customers will have a failed VM deployment with this VM size.
 - Remediation: By design in preparation for the Azure Stack Hub GPU preview.
+- Occurrence: NA
+
 
 ### VM boot diagnostics 1
 
@@ -148,12 +152,14 @@ Remediation: Create a VMSS with PowerShell or a resource manager template.
 - Applicable: This issue applies to all supported releases.
 - Cause: Creating VMs in an availability set of 3 fault domains and creating a virtual machine scale set instance fails with a **FabricVmPlacementErrorUnsupportedFaultDomainSize** error during the update process on a 4-node Azure Stack Hub environment.
 - Remediation: You can create single VMs in an availability set with 2 fault domains successfully. However, scale set instance creation is still not available during the update process on a 4-node Azure Stack Hub deployment.
+- Occurrence: NA
 
 ### SQL VM: Storage account creating failure when configuring Auto Backup
 
 - Applicable: This issue applies to 2002.
 - Cause: When configuring the automated backup of SQL VMs with a new storage account, it fails with the error **Deployment template validation failed. The template parameter for 'SqlAutobackupStorageAccountKind' is not found.**
 - Remediation: Apply the latest 2002 hotfix.
+- Occurrence: NA
 
 ### SQL VM: Auto backup cannot be configured with TLS 1.2 enabled
 
@@ -168,12 +174,14 @@ Remediation: Create a VMSS with PowerShell or a resource manager template.
 - Applicable: This issue applies to release 2002. 
 - Cause: If the stamp contains SQL resource provider (RP) version 1.1.33.0 or earlier, upon update of the stamp, the blades for SQL/MySQL will not load.
 - Remediation: Update the RP to version 1.1.47.0
+- Occurrence: NA
 
 ### App Service
 
 - Applicable: This issue applies to release 2002.
 - Cause: If the stamp contains App Service resource provider (RP) version 1.7 and older, upon update of the stamp, the blades for App Service do not load.
 - Remediation: Update the RP to version [2020 Q2](azure-stack-app-service-update.md).
+- Occurrence: NA
 
 ## Portal
 
@@ -385,10 +393,9 @@ Remediation: Create a VMSS with PowerShell or a resource manager template.
 - Cause: Creating VMs in an availability set of 3 fault domains and creating a virtual machine scale set instance fails with a **FabricVmPlacementErrorUnsupportedFaultDomainSize** error during the update process on a 4-node Azure Stack Hub environment.
 - Remediation: You can create single VMs in an availability set with 2 fault domains successfully. However, scale set instance creation is still not available during the update process on a 4-node Azure Stack Hub deployment.
 
-
-
-
 ## Update
+
+### Update fails
 
 - Applicable: This issue applies to all supported releases.
 - Cause: When attempting to install the Azure Stack Hub update, the status for the update might fail and change state to **PreparationFailed**. This is caused by the update resource provider (URP) being unable to properly transfer the files from the storage container to an internal infrastructure share for processing.
@@ -566,6 +573,8 @@ Remediation: Create a VMSS with PowerShell or a resource manager template.
 - Occurrence: Common
 
 ## Update
+
+### Update fails
 
 - Applicable: This issue applies to all supported releases.
 - Cause: When attempting to install the 1907 Azure Stack Hub update, the status for the update might fail and change state to **PreparationFailed**. This is caused by the update resource provider (URP) being unable to properly transfer the files from the storage container to an internal infrastructure share for processing.

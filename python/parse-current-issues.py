@@ -1,4 +1,7 @@
-'''This script will parse the current known issues topic from Azure Stack (6/16/2020).'''
+'''This script will parse the current known issues topic from Azure Stack (6/16/2020).
+The script doesn't validate. The best approach might have been to convert.
+
+'''
 
 from bs4 import BeautifulSoup
 import markdown
@@ -57,12 +60,25 @@ def main():
             b_soup = BeautifulSoup(b,'html.parser')
             title = escape(b_soup.findAll("h3")[0].get_text().strip())
             print("Getting {}...".format(title))
-            raw_body = escape(b_soup.get_text()).replace("\n", " ")
+            raw_body = escape(b_soup.get_text()).replace("\n", "\\n")
+            raw_body = escape(b_soup.get_text()).replace("\\n\\n", "\\n")
             raw_body = " ".join(raw_body.split())
-            applicable = raw_body[raw_body.find("Applicable")+11:raw_body.find("Cause")].strip()
-            cause = raw_body[raw_body.find("Cause")+6:raw_body.find("Remediation")].strip()
-            remediation = raw_body[raw_body.find("Remediation")+12:raw_body.find("Occurrence")].strip()
-            occurance = raw_body[raw_body.find("Occurrence")+11:].strip()
+            if raw_body.find("Applicable") > 0: 
+                applicable = raw_body[raw_body.find("Applicable")+11:raw_body.find("Cause")].strip()
+            else:
+                applicable = "NA"
+            if raw_body.find("Cause") > 0:
+                cause = raw_body[raw_body.find("Cause")+6:raw_body.find("Remediation")].strip()
+            else:
+                cause = "NA"
+            if raw_body.find("Remediation") > 0:
+                remediation = raw_body[raw_body.find("Remediation")+12:raw_body.find("Occurrence")].strip()
+            else:
+                remediation = "NA"
+            if raw_body.find("Occurrence") > 0:
+                occurance = raw_body[raw_body.find("Occurrence")+11:].strip()
+            else:
+                occurance = "NA"
             record = [area, title, applicable, cause, remediation, occurance]
             knownissuestable.append(record)
     write_csv(knownissuestable, KNOWNISSUESTABLE)
