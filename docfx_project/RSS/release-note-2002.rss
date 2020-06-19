@@ -3,6 +3,7 @@
 
 <channel>
   <title>Azure Stack Hub Release Notes</title>
+<item>
 <title>Release note 1</title>
 <link>https://github.com/mattbriggs/azs-modular-poc/blob/master/docfx_project/articles/release-notes.md</link>
 <description>
@@ -18,9 +19,11 @@
 
 <p>Body paragraph.</p>
 </description>
+</item>
+<item>
 <title>Release note 2</title>
 <link>https://github.com/mattbriggs/azs-modular-poc/blob/master/docfx_project/articles/release-notes.md</link>
-</description>
+<description>
 <p>Area: Azure-Stack-Hub-Area</p>
 
 <p>Release: 2020_2</p>
@@ -32,7 +35,9 @@
 <p>Body paragraph.</p>
 
 <p>Body paragraph.</p>
-
+</description>
+</item>
+<item>
 <title>Release note 3</title>
 <link>https://github.com/mattbriggs/azs-modular-poc/blob/master/docfx_project/articles/release-notes.md</link>
 <description>
@@ -48,7 +53,7 @@
 
 <p>Body paragraph.</p>
 </description>
-  </item>
+</item>
 </channel>
 
 </rss>
