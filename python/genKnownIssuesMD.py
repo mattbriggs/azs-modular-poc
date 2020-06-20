@@ -64,12 +64,9 @@ def write_text(outbody, path):
     out_file.close()
 
 
-def main():
-    '''Get the datafile, drop fields, get 'ready', and then loop
-    through the list to create the markdown files.'''
-
-    # get data and order
-    data = pd.read_csv(DATAFILE)
+def get_data_from_csv(path):
+    '''Get data and order'''
+    data = pd.read_csv(path)
     issues = data.drop(["importsequencenumber", "statuscode", "statecode",
         "timezoneruleversionnumber", "utcconversiontimezonecode",
         "versionnumber", "owningbusinessunit", 
@@ -81,6 +78,16 @@ def main():
         "creeb_title", "creeb_cause", "creeb_remediation",
         "creeb_occurance"]]
     listofissues = issuesorder.values.tolist()
+
+    return listofissues
+
+
+
+def main():
+    '''Get the datafile, drop fields, get 'ready', and then loop
+    through the list to create the markdown files.'''
+
+    listofissues = get_data_from_csv(DATAFILE)
 
     # build markdown
     print("Starting build.")
