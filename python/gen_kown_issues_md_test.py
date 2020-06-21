@@ -1,6 +1,6 @@
 '''Test file for genKnownIssuesMD.py'''
 
-import genKnownIssuesMD as gki
+import gen_known_issue_md as gki
 
 def test_build_include():
     '''Test to see if the include build works by testing length'''

@@ -9,10 +9,9 @@ Publication Process in the AzS Hub Content Strategy OneNote.
 
 '''
 
-import os
 from datetime import datetime
-import pandas as pd
 import html
+import pandas as pd
 
 
 # variable block
@@ -49,9 +48,9 @@ ms.sub-service: {}
 - Applicable: {}
 - Cause: {}
 - Remediation: {}
-- Occurrence: {}'''.format(THISDATE, msreviewer, inlist[4], 
-        inlist[1], inlist[5], inlist[8], inlist[7], inlist[9], 
-        inlist[10], inlist[11])
+- Occurrence: {}'''.format(THISDATE, msreviewer, inlist[4],
+    inlist[1], inlist[5], inlist[8], inlist[7], inlist[9], 
+    inlist[10], inlist[11])
     includefile = html.unescape(includefile)
     return includefile
 
