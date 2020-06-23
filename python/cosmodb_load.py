@@ -3,11 +3,6 @@
 import pydocumentdb
 import pydocumentdb.document_client as document_client
 
-config = {  "ENDPOINT" : "https://azurestackhubwriters.table.cosmos.azure.com:443/",
-            "MASTERKEY": "hAJVoZ5i9YBiFtPTSxFilWbZByiwhM28yb9OjJr5EZoil7p7z4NV1bkiHqB707FzwTntnCMpvAEXsxETKaIIUA==",
-            "DOCUMENTDB_DATABASE": "azurestackhubwriters",
-            "DOCUMENTDB_COLLECTION": "knownsissues"  }
-
 # Initialize the Python Azure Cosmos DB client
 client = document_client.DocumentClient(config['ENDPOINT'], {'masterKey': config['MASTERKEY']})
 # Create a database
