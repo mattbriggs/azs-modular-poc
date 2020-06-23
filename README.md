@@ -2,9 +2,9 @@
 
 A modular, single source proof-of-concept for technical docs.
 
-To start the sever:
+To start the server:
 
 ```cli
-docfx docfx_project\docfx.json --serve
+docfx docfx_project\docfx.json --server
 ```
 
