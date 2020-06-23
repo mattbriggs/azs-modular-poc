@@ -11,7 +11,7 @@ import csv
 # update variables
 
 KNOWNISSUES = r"C:\git\mb\azs-modular-poc\python\data\preparse.md"
-KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues.csv"
+KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_raw.csv"
 
 
 def get_textfromMD(path):
