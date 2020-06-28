@@ -4,7 +4,6 @@ This script will parse and validate the current known issues includes from Azure
 '''
 
 import os
-import cerberus
 import csv
 import json
 
@@ -13,6 +12,7 @@ import val_ki_functions as VAL
 KNOWNISSUES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
 KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_validation.csv"
 SCHEMA = r"C:\git\mb\azs-modular-poc\python\data\schema_include_beta.json"
+VALIDATIONREPORT = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_report_validation.csv"
 
 
 def get_textfromMD(path):
@@ -55,21 +55,25 @@ def main():
     with open(SCHEMA) as fh:
         schema_include = json.load(fh)
     report = []
-    report.append(["issueid", "validation status"])
+    report.append(["issueid", "validation status", "path", "error"])
     for p in include_paths:
         if p.find("issue_azs") > -1:
             inbody = get_textfromMD(p)
+            valid_id = p.split("\\")[-1][:-3]
             try:
                 if VAL.validate_base_file(inbody):
                     include_head = "###"
                     tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
                     include_body = VAL.parse_include(inbody, include_head, tokens)
-                    print(VAL.validate_summary(schema_include, include_body))
+                    v_line = VAL.validate_summary(schema_include, include_body)
+                    report.append([valid_id, v_line["summary"], p, v_line["details"]])
                 else:
-                    print(" {'summary': False, 'details' : {'error' : 'Not a valid include file: " + p.split("\\")[-1] + "}")
+                    print(" {'summary': False, 'details' : {'details' : 'Not a valid include file: ' +valid_id  + '}")
+                    report.append([valid_id, False, p, "{'details' : 'Not a valid include file: ' +valid_id  + '}"])
             except Exception as e:
-                    print(" {'summary': False, 'details' : {'error' : 'Not a valid include file: " + p.split("\\")[-1] + " " + str(e) + "}")
-
+                    print(" {'summary': False, 'details' : {'error' : 'Not a valid include file: " + valid_id + " " + str(e) + "}")
+                    report.append([valid_id, False, p, "{'details' : 'Not a valid include file: ' +valid_id  + '}"])
+    write_csv(report, VALIDATIONREPORT)
 
 if __name__ == "__main__":
     main()
