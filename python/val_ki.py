@@ -6,11 +6,13 @@ This script will parse and validate the current known issues includes from Azure
 import os
 import cerberus
 import csv
+import json
 
-import val_ki_dev as VAL
+import val_ki_functions as VAL
 
 KNOWNISSUES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
 KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_validation.csv"
+SCHEMA = r"C:\git\mb\azs-modular-poc\python\data\schema_include_beta.json"
 
 
 def get_textfromMD(path):
@@ -46,26 +48,27 @@ def get_files(inpath):
                 outlist.append(entry)
     return outlist
 
-def parse_known_issues(inbody):
-    include = {}
-    include["parse_state"] = "no"
-    parts = inbody.split("---")
-    body = parts[3].replace("\n### ", "^~")
-    body = body.replace(":", "^~")
 
 def main():
     '''Validate includes in the repo.'''
     include_paths = get_files(KNOWNISSUES)
+    with open(SCHEMA) as fh:
+        schema_include = json.load(fh)
     report = []
     report.append(["issueid", "validation status"])
     for p in include_paths:
         if p.find("issue_azs") > -1:
             inbody = get_textfromMD(p)
-            include_head = "###"
-            schemax = {'name': {'type': 'string'}}
-            tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
-            include_body = VAL.parse_include(inbody, include_head, tokens)
-            print(VAL.validate_summary(include_body, schemax))
+            try:
+                if VAL.validate_base_file(inbody):
+                    include_head = "###"
+                    tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
+                    include_body = VAL.parse_include(inbody, include_head, tokens)
+                    print(VAL.validate_summary(schema_include, include_body))
+                else:
+                    print(" {'summary': False, 'details' : {'error' : 'Not a valid include file: " + p.split("\\")[-1] + "}")
+            except Exception as e:
+                    print(" {'summary': False, 'details' : {'error' : 'Not a valid include file: " + p.split("\\")[-1] + " " + str(e) + "}")
 
 
 if __name__ == "__main__":

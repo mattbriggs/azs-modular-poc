@@ -1,0 +1,15 @@
+{"author": {"type": "string"},
+"ms.service": {"type": "string"},
+"ms.date": {"type": "string"},
+"ms.lastreviewed": {"type": "string"},
+"ms.topic": {"type": "string"},
+"ms.author": {"type": "string"},
+"ms.reviewer": {"type": "string"},
+"ms.issue-id": {"type": "string"},
+"ms.sub-service": {"type": "string"},
+"title": {"type": "string"},
+"Applicable": {"type": "string"},
+"Cause": {"type": "string"},
+"Remediation": {"type": "string"},
+"Occurrence": {"type": "string"}
+}

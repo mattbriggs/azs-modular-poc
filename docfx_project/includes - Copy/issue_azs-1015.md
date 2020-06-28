@@ -9,7 +9,7 @@ ms.lastreviewed: nan
 ms.issue-id: azs-1015
 ms.sub-service: Virtual Machines
 
---
+---
 ### Virtual machine scale set: Create failures during patch and update on 4-node Azure Stack Hub environments
 
 - Applicable: This issue applies to all supported releases.

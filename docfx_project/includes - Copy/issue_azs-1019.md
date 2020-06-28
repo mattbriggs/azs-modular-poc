@@ -5,7 +5,9 @@ ms.topic: include
 ms.date: 2020-06-20
 ms.author: mabrigg
 ms.reviewer: kivenkat
+ms.lastreviewed: nan
 ms.issue-id: azs-1019
+ms.sub-service: Virtual Machines
 
 ---
 ### Virtual machine diagnostic settings blade

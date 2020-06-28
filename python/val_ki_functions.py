@@ -1,41 +1,6 @@
-'''Working through validation logic.'''
+'''Validation functions.'''
 
 import cerberus as CB
-
-include = '''---
-author: mattbriggs
-ms.service: azure-stack
-ms.topic: include
-ms.date: 2020-06-20
-ms.author: mabrigg
-ms.reviewer: kivenkat
-ms.lastreviewed: nan
-ms.issue-id: azs-1014
-ms.sub-service: Virtual Machines
-
----
-### VM boot diagnostics
-
-- Applicable: This issue applies to all supported releases.
-- Cause: When creating a new Windows virtual machine (VM), the following error may be displayed: Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name' . The error occurs if you enable boot diagnostics on a VM, but delete your boot diagnostics storage account.
-- Occurrence: Common
-'''
-
-schema_include = {'author': {'type': 'string'},
-'ms.service': {'type': 'string'},
-'ms.date': {'type': 'string'},
-'ms.lastreviewed': {'type': 'string'},
-'ms.topic': {'type': 'string'},
-'ms.author': {'type': 'string'},
-'ms.reviewer': {'type': 'string'},
-'ms.issue-id': {'type': 'string'},
-'ms.sub-service': {'type': 'string'},
-'title': {'type': 'string'},
-'Applicable': {'type': 'string'},
-'Cause': {'type': 'string'},
-'Remediation': {'type': 'string'},
-'Occurrence': {'type': 'string'}
-}
 
 
 def validate_base_file(rawbody):
@@ -82,8 +47,9 @@ def parse_include(inbody, include_head, tokens):
     return elements_dict
 
 
-def validate_summary(indict, schema):
+def validate_summary(schema, indict):
     v = CB.Validator(schema)
+    v.require_all = True
     v.allow_unknown = True
     valid_check = v.validate(indict)
     valid_return = {}
@@ -91,8 +57,10 @@ def validate_summary(indict, schema):
     valid_return["details"] = v.errors
     return valid_return
 
-include_head = "###"
-tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
-include_body = parse_include(include, include_head, tokens)
-print(include_body)
-print(validate_summary(include_body, schema_include))
+
+def main():
+    print("This is the base module for include validation.")
+
+if __name__ == "__main__":
+    main()
+
