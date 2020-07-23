@@ -60,19 +60,24 @@ def main():
         if p.find("issue_azs") > -1:
             inbody = get_textfromMD(p)
             valid_id = p.split("\\")[-1][:-3]
+            print("Validating " + valid_id[6:])
             try:
                 if VAL.validate_base_file(inbody):
                     include_head = "###"
                     tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
                     include_body = VAL.parse_include(inbody, include_head, tokens)
                     v_line = VAL.validate_summary(schema_include, include_body)
-                    report.append([valid_id, v_line["summary"], p, v_line["details"]])
+                    if v_line["summary"]:
+                        report.append([valid_id, v_line["summary"], p, "No error."])
+                    else:
+                        fields = list(v_line["details"].keys())
+                        for f in fields:
+                            error_message = "{}: {}".format(v_line["details"][f][0], f)
+                            report.append([valid_id, v_line["summary"], p, error_message ])
                 else:
-                    print(" {'summary': False, 'details' : {'details' : 'Not a valid include file: ' +valid_id  + '}")
-                    report.append([valid_id, False, p, "{'details' : 'Not a valid include file: ' +valid_id  + '}"])
+                    report.append([valid_id, False, p, "Not a valid include file."])
             except Exception as e:
-                    print(" {'summary': False, 'details' : {'error' : 'Not a valid include file: " + valid_id + " " + str(e) + "}")
-                    report.append([valid_id, False, p, "{'details' : 'Not a valid include file: ' +valid_id  + '}"])
+                    report.append([valid_id, False, p, "Not a valid include file. {}".format(e)])
     write_csv(report, VALIDATIONREPORT)
 
 if __name__ == "__main__":
