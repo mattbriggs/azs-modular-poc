@@ -7,7 +7,7 @@ ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: nan
 ms.issue-id: azs-1059
-ms.sub-service: nan
+ms.sub-service: Virtual Machines
 
 ---
 ### Storage account configuration

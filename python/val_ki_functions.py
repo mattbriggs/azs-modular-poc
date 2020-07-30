@@ -1,6 +1,16 @@
-'''Validation functions.'''
+'''
+    Azure Stack Hub Modular Documentation
+    Module validator.
+    entry finction validate_module_ki
+    input: module as text, schema file (json)
+    output: dict (json) of parsed doc.
+
+    With the following schema:
+
+'''
 
 import cerberus as CB
+import json
 
 
 def validate_base_file(rawbody):
@@ -47,7 +57,8 @@ def parse_include(inbody, include_head, tokens):
     return elements_dict
 
 
-def validate_summary(schema, indict):
+def run_schema_against_parse(schema, indict):
+    '''Run the loaded schema against the parsed module.'''
     v = CB.Validator(schema)
     v.require_all = True
     v.allow_unknown = True
@@ -56,6 +67,17 @@ def validate_summary(schema, indict):
     valid_return["summary"] = valid_check
     valid_return["details"] = v.errors
     return valid_return
+
+
+def validate_module_ki(schema, inbody):
+    '''A function that sets specific values for the Known Issue.'''
+    with open(schema) as fh:
+        loaded_schema = json.load(fh)
+    include_head = "###"
+    tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
+    parsed_body = parse_include(inbody, include_head, tokens)
+    validation = run_schema_against_parse(loaded_schema, parsed_body)
+    return validation
 
 
 def main():

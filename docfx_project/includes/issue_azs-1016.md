@@ -7,7 +7,7 @@ ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: nan
 ms.issue-id: azs-1016
-ms.sub-service: Virtual Machines
+ms.sub-service: Vegetables
 
 ---
 ### Ubuntu SSH access

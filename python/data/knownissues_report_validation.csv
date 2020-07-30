@@ -13,7 +13,7 @@ issue_azs-1012,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1
 issue_azs-1013,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1013.md,No error.
 issue_azs-1014,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1014.md,No error.
 issue_azs-1015,False,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1015.md,Not a valid include file. list index out of range
-issue_azs-1016,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1016.md,No error.
+issue_azs-1016,False,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1016.md,unallowed value Vegetables: ms.sub-service
 issue_azs-1017,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1017.md,No error.
 issue_azs-1018,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1018.md,No error.
 issue_azs-1019,False,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1019.md,required field: ms.lastreviewed
@@ -66,7 +66,7 @@ issue_azs-1063,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1
 issue_azs-1064,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1064.md,No error.
 issue_azs-1065,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1065.md,No error.
 issue_azs-1066,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1066.md,No error.
-issue_azs-1067,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1067.md,No error.
+issue_azs-1067,False,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1067.md,unallowed value SQL and MySQL: ms.sub-service
 issue_azs-1068,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1068.md,No error.
 issue_azs-1069,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1069.md,No error.
 issue_azs-1070,True,C:\git\mb\azs-modular-poc\docfx_project\includes\issue_azs-1070.md,No error.

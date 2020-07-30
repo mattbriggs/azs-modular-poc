@@ -7,7 +7,7 @@ ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: nan
 ms.issue-id: azs-1055
-ms.sub-service: nan
+ms.sub-service: Virtual Machines
 
 ---
 ### Upload blob option unsupported

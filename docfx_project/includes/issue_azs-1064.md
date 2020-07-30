@@ -7,7 +7,7 @@ ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: nan
 ms.issue-id: azs-1064
-ms.sub-service: nan
+ms.sub-service: Virtual Machines
 
 ---
 ### Duplicate Subscription button in Lock blade
