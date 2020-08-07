@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: validate modules in Azure Stack Hub
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: validation step
       id: modulate-validation
       uses: ./action-asz-validation
