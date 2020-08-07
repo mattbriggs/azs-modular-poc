@@ -1,4 +1,4 @@
-name: "Azure Stack Hub Module Validator"
+name: Azure Stack Hub Module Validation
 description: "Checks modules for validation following the AzS Hub Doc Model."
 branding:
   icon: "terminal"
