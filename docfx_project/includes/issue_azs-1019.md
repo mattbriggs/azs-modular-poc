@@ -2,7 +2,7 @@
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: include
-ms.date: 2020-06-20
+ms.date: 2020-09-20
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.issue-id: azs-1019
