@@ -1,12 +1,11 @@
-#!/bin/bash
+#!/bin/sh -l
 
-set -ex
+echo "entrypoint running"
 
 if
-    python validate.py "$1"
+    echo "python validate.py $1"
+    echo "python ran"
 else
     echo "An error"
     exit 0
 fi
-
-echo Done :B

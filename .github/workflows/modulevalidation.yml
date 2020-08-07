@@ -1,15 +1,15 @@
-name: Azure Stack Hub Module Validation
-description: "Checks modules for validation following the AzS Hub Doc Model."
+name: 'Azure Stack Hub Module Validation'
+description: 'Checks modules for validation following the AzS Hub Doc Model.'
 branding:
-  icon: "terminal"
+  icon: 'terminal'
   color: "red"
 inputs:
   path:
-    description: "Source file or directory."
+    description: 'Source file or directory.'
     required: false
     default: "."
 runs:
-  using: "Docker"
+  using: "docker"
   image: "Dockerfile"
   args:
     - ${{ inputs.path }}
