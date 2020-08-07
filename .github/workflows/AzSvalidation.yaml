@@ -9,6 +9,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Validation step
       id: valid-modules
-      uses: actions/action-asz-validation@v1.0.2
+      uses: actions/action-asz-validation@v1.1.3
       with:
        path: "."
