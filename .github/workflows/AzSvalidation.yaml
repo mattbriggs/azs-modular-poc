@@ -1,13 +1,10 @@
-# action.yml
-name: 'Azure Stack Hub Module Validation'
-description: 'Checks modules for validation following the AzS Hub Doc Model.'
-inputs:
-  path:
-    description: 'Source file or directory.'
-    required: false
-    default: "."
-runs:
-  using: "docker"
-  image: "Dockerfile"
-  args:
-    - ${{ inputs.path }}
+on: [push]
+
+jobs:
+  azure-stack-hub-validation:
+    runs-on: ubuntu-latest
+    name: validate modules in Azure Stack Hub
+    steps:
+    - name: validation step
+      id: modulate-validation
+      uses: ./action-asz-validation
