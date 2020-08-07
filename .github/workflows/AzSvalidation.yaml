@@ -1,12 +1,14 @@
 on: [pull_request]
 
 jobs:
-  hello_world_job:
+  validate-module:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Validates the modules.
     steps:
-    - name: Hello world action step
-      id: hello
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Validation step
+      id: valid-modules
       uses: actions/action-asz-validation@master
       with:
        path: .
