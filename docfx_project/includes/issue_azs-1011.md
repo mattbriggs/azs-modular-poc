@@ -5,7 +5,7 @@ ms.topic: include
 ms.date: 2020-06-20
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: nan
+ms.lastreviewed: 8/7/2020
 ms.issue-id: azs-1011
 ms.sub-service: Virtual Machines
 
