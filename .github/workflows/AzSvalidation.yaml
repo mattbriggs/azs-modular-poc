@@ -7,6 +7,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: validation step
+    - name: Azure Stack Hub Module Validation
       id: modulate-validation
-      uses: actions/action-asz-validation
+      uses: actions/action-asz-validation@v1
+    - name: Get the report text
+    - run: echo "The report info is ${{ steps.hello.outputs.report }}"
