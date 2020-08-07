@@ -11,4 +11,4 @@ jobs:
       id: valid-modules
       uses: actions/action-asz-validation@master
       with:
-       path: .
+       path: "."
