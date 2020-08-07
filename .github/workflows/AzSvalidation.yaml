@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: actions/action-asz-validation@v1.1.1
+      uses: actions/action-asz-validation@master
       with:
        path: .
