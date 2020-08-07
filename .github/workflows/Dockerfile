@@ -1,5 +1,7 @@
 FROM python:3
 
+LABEL "maintainer" = "Matt Briggs <mabrigg@microsoft.com>"
+
 ADD val_ki_dockeraction.py
 ADD val_ki_functions.py
 ADD mod_utilities.py
