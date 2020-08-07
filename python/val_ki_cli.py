@@ -12,7 +12,7 @@ import val_ki_functions as VAL
 import mod_utilities as MU
 
 APPVERSION = "Validation CLI Version 1.0.1.20200729\n"
-SCHEMA = r"C:\git\mb\azs-modular-poc\python\data\schema_include_beta.json"
+SCHEMA = r"C:\git\mb\azs-modular-poc\python\schemas\known_issue.json"
 
 
 class TagTerminal(cmd.Cmd):

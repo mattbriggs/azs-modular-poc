@@ -18,20 +18,28 @@ This script will parse and validate the current known issues includes from Azure
 '''
 
 import os
-import csv
 import json
 
 import val_ki_functions as VAL
 import mod_utilities as MU
+from prettytable import PrettyTable
 
 MODULES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
 SCHEMA = r"C:\git\mb\azs-modular-poc\python\schemas\known_issue.json"
-VALIDATIONREPORT = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_report_validation.csv"
-
 
 def repo_logic(indict):
     '''Insert the logic to process the return from the function.'''
     print(indict)
+
+def output_table(inmatrix):
+    '''With the list in a list print a list for pretty print'''
+    x = PrettyTable()
+    x.field_names = inmatrix[0]
+    for inx, row in enumerate(inmatrix):
+        if inx > 0:
+            x.add_row(row)
+    x.align = "l"
+    print(x)
 
 def main():
     '''
@@ -39,27 +47,26 @@ def main():
     '''
     include_paths = MU.get_files(MODULES)
     report = []
-    report.append(["issueid", "validation status", "path", "error"])
+    report.append(["ID", "Valid", "Issue"])
     for p in include_paths:
         if p.find("issue_azs") > -1:
             inbody = MU.get_textfromMD(p)
             valid_id = p.split("\\")[-1][:-3]
-            print("Validating " + valid_id[6:])
             try:
                 if VAL.validate_base_file(inbody):
                     v_line = VAL.validate_module_ki(SCHEMA, inbody)
                     if v_line["summary"]:
-                        report.append([valid_id, v_line["summary"], p, "No error."])
+                        report.append([valid_id, v_line["summary"], "No issue."])
                     else:
                         fields = list(v_line["details"].keys())
                         for f in fields:
                             error_message = "{}: {}".format(v_line["details"][f][0], f)
-                            report.append([valid_id, v_line["summary"], p, error_message ])
+                            report.append([valid_id, v_line["summary"], error_message ])
                 else:
-                    report.append([valid_id, False, p, "Not a valid include file."])
+                    report.append([valid_id, False, "Not a valid module file."])
             except Exception as e:
-                    report.append([valid_id, False, p, "Not a valid include file. {}".format(e)])
-    MU.write_csv(report, VALIDATIONREPORT)
+                    report.append([valid_id, False,"Not a valid module file. {}".format(e)])
+    output_table(report)
 
 if __name__ == "__main__":
     main()

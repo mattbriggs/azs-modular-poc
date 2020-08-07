@@ -1,7 +1,7 @@
 '''
     Azure Stack Hub Modular Documentation
     Module validator.
-    entry finction validate_module_ki
+    entry function validate_module_ki
     input: module as text, schema file (json)
     output: dict (json) of parsed doc.
 
@@ -70,11 +70,22 @@ def run_schema_against_parse(schema, indict):
 
 
 def validate_module_ki(schema, inbody):
-    '''A function that sets specific values for the Known Issue.'''
+    '''A function that sets specific values for the Known Issue module.'''
     with open(schema) as fh:
         loaded_schema = json.load(fh)
     include_head = "###"
     tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
+    parsed_body = parse_include(inbody, include_head, tokens)
+    validation = run_schema_against_parse(loaded_schema, parsed_body)
+    return validation
+
+
+def validate_module_wn(schema, inbody):
+    '''A function that sets specific values for the What's New module.'''
+    with open(schema) as fh:
+        loaded_schema = json.load(fh)
+    include_head = "###"
+    tokens = ["Applicable to","Description", "For more information"]
     parsed_body = parse_include(inbody, include_head, tokens)
     validation = run_schema_against_parse(loaded_schema, parsed_body)
     return validation
