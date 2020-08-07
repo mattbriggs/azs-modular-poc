@@ -17,6 +17,7 @@ This script will parse and validate the current known issues includes from Azure
 
 '''
 
+import sys
 import os
 import json
 
@@ -24,7 +25,7 @@ import val_ki_functions as VAL
 import mod_utilities as MU
 from prettytable import PrettyTable
 
-MODULES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
+MODULES = r"\docfx_project\includes" # C:\\git\\mb\\azs-modular-poc
 SCHEMA = r"C:\git\mb\azs-modular-poc\python\schemas\known_issue.json"
 
 def repo_logic(indict):
@@ -45,10 +46,13 @@ def main():
     '''
         Validate includes in the repo. (Main Logic for repo parsing)
     '''
-    include_paths = MU.get_files(MODULES)
+    repository = sys.argv[1]
+    print(sys.argv)
+    include_path = MU.get_files(repository + MODULES)
+    print(repository + MODULES)
     report = []
     report.append(["ID", "Valid", "Issue"])
-    for p in include_paths:
+    for p in include_path:
         if p.find("issue_azs") > -1:
             inbody = MU.get_textfromMD(p)
             valid_id = p.split("\\")[-1][:-3]
