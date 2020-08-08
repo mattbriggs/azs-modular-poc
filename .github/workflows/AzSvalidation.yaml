@@ -1,14 +1,24 @@
+name: Azure Stack Hub Validation
+
 on: [pull_request]
 
 jobs:
-  validate-module:
+  build:
+
     runs-on: ubuntu-latest
-    name: Validates the modules.
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Validation step
-      id: valid-modules
-      uses: actions/action-asz-validation@v1.1.5
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
       with:
-       path: "."
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Validate modules
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        # python val_ki_dockeraction.py
+        dir
