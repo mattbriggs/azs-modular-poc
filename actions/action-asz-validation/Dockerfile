@@ -11,4 +11,4 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN pip install -r /usr/local/bin/requirements.txt
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["bash", "/usr/local/bin/entrypoint.sh"]
