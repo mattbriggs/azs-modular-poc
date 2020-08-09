@@ -51,7 +51,7 @@ def main():
     for p in include_path:
         if p.find("issue_azs") > -1:
             inbody = MU.get_textfromMD(p)
-            valid_id = p.split("\\")[-1][:-3]
+            valid_id = p.split("//")[-1][:-3]
             try:
                 if VAL.validate_base_file(inbody):
                     v_line = VAL.validate_module_ki(SCHEMA, inbody)
