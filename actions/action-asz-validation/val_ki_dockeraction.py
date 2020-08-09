@@ -24,7 +24,7 @@ import val_ki_functions as VAL
 import mod_utilities as MU
 from prettytable import PrettyTable
 
-MODULES = r"/usr/local//usr/local/docfx_project/includes"
+MODULES = r"/usr/local/azs-modular-poc/docfx_project/includes"
 SCHEMA = r"/usr/local/bin/known_issue.json"
 
 def repo_logic(indict):
