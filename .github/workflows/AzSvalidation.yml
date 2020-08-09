@@ -1,0 +1,14 @@
+name: Azure Stack Hub Validation
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+    - uses: actions/checkout@v2
+    - name: Dockrun
+      uses: actions/action-asz-validation@v1.5.5
