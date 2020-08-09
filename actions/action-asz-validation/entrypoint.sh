@@ -3,4 +3,4 @@ set -e
 
 echo "entrypoint running"
 echo "$GITHUB_REPOSITORY"
-ls
+python val_ki_dockeraction.py
