@@ -1,8 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "entrypoint running"
-
-path-report = "This is the report"
-echo "::set-output name=path-report::$path-report"
-
-exit 0
+echo "$GITHUB_REPOSITORY"
