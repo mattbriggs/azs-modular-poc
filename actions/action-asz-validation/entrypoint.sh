@@ -5,7 +5,7 @@ echo "entrypoint running"
 echo "$GITHUB_REPOSITORY"
 
 cd  /usr/local
-git clone https://github.com/mattbriggs:2e69bff0d74ed64529eda15986ed4e009ae5942d@github.com/mattbriggs/azs-modular-poc.git
+git clone https://github.com/mattbriggs/azs-modular-poc.git
 cd azs-modular-poc
 git checkout "$Branch"
 
