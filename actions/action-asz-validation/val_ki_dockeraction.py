@@ -24,8 +24,8 @@ import val_ki_functions as VAL
 import mod_utilities as MU
 from prettytable import PrettyTable
 
-MODULES = r"\docfx_project\includes"
-SCHEMA = r"known_issue.json"
+MODULES = r"/usr/local/bin/docfx_project/includes"
+SCHEMA = r"/usr/local/bin/known_issue.json"
 
 def repo_logic(indict):
     '''Insert the logic to process the return from the function.'''
