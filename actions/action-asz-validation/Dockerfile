@@ -8,6 +8,4 @@ ADD mod_utilities.py /mod_utilities.py
 COPY known_issue.json /known_issue.json
 COPY requirements.txt /requirements.txt
 
-COPY entrypoint.sh /
-
 RUN pip install -r requirements.txt
