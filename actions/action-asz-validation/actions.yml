@@ -1,0 +1,15 @@
+name: 'Module Validation'
+description: 'Checks modules for validation following the AzS Hub Doc Model.'
+outputs:
+  report:
+    description: 'The validation report.'
+inputs:
+  path-report:
+    description: 'Source file or directory.'
+    required: true
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path-report }}
