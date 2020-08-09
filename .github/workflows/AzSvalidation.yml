@@ -8,8 +8,8 @@ jobs:
 
     steps:
     - name: Checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
     - name: Validation
-    - uses: mattbriggs/action-asz-validation@v1.5.5
+      uses: mattbriggs/action-asz-validation@v1.5.5
       with:
         path: "."
