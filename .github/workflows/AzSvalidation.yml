@@ -10,4 +10,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Validation
-      uses: "./.github/actions/action-asz-validation"
+      uses: "./actions/action-asz-validation"
