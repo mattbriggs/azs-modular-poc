@@ -10,6 +10,6 @@ jobs:
     - name: Checkout
     - uses: actions/checkout@v2
     - name: Validation
-    - uses: actions/action-asz-validation@v1.5.5
+    - uses: mattbriggs/action-asz-validation@v1.5.5
       with:
         path: "."
