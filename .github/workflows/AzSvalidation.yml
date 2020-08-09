@@ -11,4 +11,4 @@ jobs:
     - name: checkout
     - uses: actions/checkout@v2
     - name: Dockrun
-      uses: actions/action-asz-validation@v1.5.5
+    - uses: actions/action-asz-validation@v1.5.5
