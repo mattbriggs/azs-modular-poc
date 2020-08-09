@@ -3,12 +3,14 @@ name: Azure Stack Hub Validation
 on: [pull_request]
 
 jobs:
-  build:
+  validatemodule:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
+    - name: Checkout
     - uses: actions/checkout@v2
-    - name: Dockrun
+    - name: Validation
     - uses: actions/action-asz-validation@v1.5.5
+      with:
+        path: "."
