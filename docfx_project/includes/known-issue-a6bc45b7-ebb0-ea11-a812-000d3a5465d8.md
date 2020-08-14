@@ -9,7 +9,7 @@ ms.lastreviewed: 2020-08-14
 ms.sub-service: SQL and MySQL
 azs.tracking: 123456
 azs.issue-id: known-issue-a6bc45b7-ebb0-ea11-a812-000d3a5465d8
-azs.status: ready
+azs.status: active
 azs.topic-schema: known-issue
 azs.audience: Operator
 azs.highlight: False

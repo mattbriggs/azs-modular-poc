@@ -42,7 +42,7 @@ ms.lastreviewed: 2020-08-14
 ms.sub-service: {}
 azs.tracking: 123456
 azs.issue-id: {}-{}
-azs.status: ready
+azs.status: active
 azs.topic-schema: known-issue
 azs.audience: Operator
 azs.highlight: False
