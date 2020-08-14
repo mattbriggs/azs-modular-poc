@@ -14,7 +14,6 @@ import mod_utilities as MU
 APPVERSION = "Validation CLI Version 1.0.1.20200729\n"
 SCHEMA = r"C:\git\mb\azs-modular-poc\python\schemas\known_issue.json"
 
-
 class TagTerminal(cmd.Cmd):
     """Accepts commands via the normal interactive prompt or on the command line."""
 

@@ -10,31 +10,11 @@
             "weight": "Bolder"
         },
         {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Technical contanct"
-                        },
-                        {
-                            "type": "Input.Text",
-                            "placeholder": "Type your alias.",
-                            "id": "ms.reviewer"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "type": "TextBlock",
             "text": "Tracking"
         },
         {
-            "type": "Input.Number",
+            "type": "Input.Text",
             "placeholder": "AzureDev Ops Bug#",
             "id": "tracking"
         },
@@ -43,14 +23,6 @@
             "title": "Highlight",
             "value": "false",
             "id": "highlight "
-        },
-        {
-            "type": "TextBlock",
-            "text": "Date"
-        },
-        {
-            "type": "Input.Date",
-            "id": "date"
         },
         {
             "type": "TextBlock",
@@ -185,21 +157,21 @@
         },
         {
             "type": "TextBlock",
-            "text": "Title"
-        },
-        {
-            "type": "Input.Text",
-            "placeholder": "How is the issue visible?",
-            "id": "title"
-        },
-        {
-            "type": "TextBlock",
             "text": "Applicable to"
         },
         {
             "type": "Input.Text",
             "placeholder": "Release No. (2005, 2010, etc.)",
             "id": "applicable"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Title"
+        },
+        {
+            "type": "Input.Text",
+            "placeholder": "How is the issue visible?",
+            "id": "title"
         },
         {
             "type": "TextBlock",

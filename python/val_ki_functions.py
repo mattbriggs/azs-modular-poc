@@ -43,7 +43,7 @@ def parse_include(inbody, include_head, tokens):
         if indx > 0:
             for t in tokens:
                 if e.find(t) > -1:
-                    elements_dict[t] =e.split(t + ":")[1].strip()
+                    elements_dict[t] = e.split(t + ":")[1].strip()
 
     # get metadata
     metadata_lines = parts[1].split("\n")
@@ -74,7 +74,7 @@ def validate_module_ki(schema, inbody):
     with open(schema) as fh:
         loaded_schema = json.load(fh)
     include_head = "###"
-    tokens = ["Applicable", "Cause", "Remediation", "Occurrence"]
+    tokens = ["Applicable to", "Description", "Remediation", "Occurrence"]
     parsed_body = parse_include(inbody, include_head, tokens)
     validation = run_schema_against_parse(loaded_schema, parsed_body)
     return validation
@@ -87,6 +87,7 @@ def validate_module_wn(schema, inbody):
     include_head = "###"
     tokens = ["Applicable to","Description", "For more information"]
     parsed_body = parse_include(inbody, include_head, tokens)
+    print(parsed_body)
     validation = run_schema_against_parse(loaded_schema, parsed_body)
     return validation
 
