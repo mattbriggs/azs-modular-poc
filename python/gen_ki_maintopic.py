@@ -70,7 +70,7 @@ def main():
         print("Getting issues for {}...\n".format(feature_area))
         knownissuesfile += feature_area
         for i in group['azs.issue-id'].get_values():
-            issue = "[!INCLUDE [notes] (../includes/{}.md)]\n".format(i)
+            issue = "[!INCLUDE [notes](../includes/{}.md)]\n".format(i)
             knownissuesfile += issue
     knownissuesfile += endblock
     MU.write_text(knownissuesfile, TARGET)
