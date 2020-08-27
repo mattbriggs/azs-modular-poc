@@ -19,6 +19,14 @@ def get_textfromMD(path):
     return textout
 
 
+def write_text(outbody, path):
+    '''Write text file to the path.'''
+    out_file = open(path, "w")
+    for line in outbody:
+        out_file.write(line)
+    out_file.close()
+
+
 def write_csv(outbody, path):
     '''Write CSV file to the path.'''
     csvout = open(path, 'w', newline="")
@@ -45,6 +53,7 @@ def get_files(inpath):
 
 def main():
     print("This is module contains commonly used functions.")
+
 
 if __name__ == "__main__":
     main()
