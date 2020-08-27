@@ -41,13 +41,14 @@ def main():
     report = []
     report.append(["issueid", "validation status", "path", "error"])
     for p in include_paths:
-        if p.find("issue_azs") > -1:
+        if p.find("known-issue") > -1:
             inbody = MU.get_textfromMD(p)
             valid_id = p.split("\\")[-1][:-3]
             print("Validating " + valid_id[6:])
             try:
                 if VAL.validate_base_file(inbody):
-                    v_line = VAL.validate_module_ki(SCHEMA, inbody)
+                    body_parse = VAL.parse_module(inbody)
+                    v_line = VAL.validate_module_ki(SCHEMA, body_parse)
                     if v_line["summary"]:
                         report.append([valid_id, v_line["summary"], p, "No error."])
                     else:
@@ -60,6 +61,7 @@ def main():
             except Exception as e:
                     report.append([valid_id, False, p, "Not a valid include file. {}".format(e)])
     MU.write_csv(report, VALIDATIONREPORT)
+    print("The validation report saved to: " + VALIDATIONREPORT)
 
 if __name__ == "__main__":
     main()

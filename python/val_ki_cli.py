@@ -24,7 +24,8 @@ class TagTerminal(cmd.Cmd):
 
         try:
             module_body = MU.get_textfromMD(line)
-            validation = VAL.validate_module_ki(SCHEMA, module_body)
+            body_parse = VAL.parse_module(module_body)
+            validation = VAL.validate_module_ki(SCHEMA, body_parse )
             print(validation)
 
             print("Done")

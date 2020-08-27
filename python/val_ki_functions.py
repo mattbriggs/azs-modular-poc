@@ -69,14 +69,19 @@ def run_schema_against_parse(schema, indict):
     return valid_return
 
 
-def validate_module_ki(schema, inbody):
-    '''A function that sets specific values for the Known Issue module.'''
-    with open(schema) as fh:
-        loaded_schema = json.load(fh)
+def parse_module(inbody):
+    '''A function that takes in the text of a module and produces a dictionary.'''
     include_head = "###"
     tokens = ["Applicable to", "Description", "Remediation", "Occurrence"]
     parsed_body = parse_include(inbody, include_head, tokens)
-    validation = run_schema_against_parse(loaded_schema, parsed_body)
+    return parsed_body
+
+
+def validate_module_ki(schema, bodyjson):
+    '''A function that sets specific values for the Known Issue module.'''
+    with open(schema) as fh:
+        loaded_schema = json.load(fh)
+    validation = run_schema_against_parse(loaded_schema, bodyjson)
     return validation
 
 
