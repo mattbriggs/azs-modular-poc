@@ -34,6 +34,7 @@ def main():
     print(schema_set)
     report = []
     report.append(["issueid", "validation status", "path", "error"])
+    validatation_state = True
     for p in include_paths:
         split_path = p.split("\\")[-1].split("-")
         path_slug = "{}-{}".format(split_path[0],split_path[1])
@@ -49,15 +50,19 @@ def main():
                     if v_line["summary"]:
                         report.append([valid_id, v_line["summary"], p, "No error."])
                     else:
+                        validatation_state = False
                         fields = list(v_line["details"].keys())
                         for f in fields:
                             error_message = "{}: {}".format(v_line["details"][f][0], f)
                             report.append([valid_id, v_line["summary"], p, error_message ])
                 else:
                     report.append([valid_id, False, p, "Not a valid include file."])
+                    validatation_state = False
             except Exception as e:
                     report.append([valid_id, False, p, "Not a valid include file. {}".format(e)])
+                    validatation_state = False
     MU.write_csv(report, VALIDATIONREPORT)
+    print("The repository is valid: {}".format(validatation_state))
     print("The validation report saved to: " + VALIDATIONREPORT)
 
 
