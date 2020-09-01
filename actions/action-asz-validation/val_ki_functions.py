@@ -5,12 +5,23 @@
     input: module as text, schema file (json)
     output: dict (json) of parsed doc.
 
-    With the following schema:
+    9.1.2020
 
 '''
 
 import cerberus as CB
+import mod_utilities as MU
 import json
+
+
+def get_schemas(path_to_schemas):
+    '''Get the stem and path and create the a dictionary of stems to paths.'''
+    list_of_files = MU.get_files(path_to_schemas, "json")
+    schema_dict = {}
+    for i in list_of_files:
+        stem = i.split("\\")[-1].split(".")[0]
+        schema_dict[stem] = i
+    return schema_dict
 
 
 def validate_base_file(rawbody):
@@ -69,14 +80,19 @@ def run_schema_against_parse(schema, indict):
     return valid_return
 
 
-def validate_module_ki(schema, inbody):
-    '''A function that sets specific values for the Known Issue module.'''
-    with open(schema) as fh:
-        loaded_schema = json.load(fh)
+def parse_module(inbody):
+    '''A function that takes in the text of a module and produces a dictionary.'''
     include_head = "###"
     tokens = ["Applicable to", "Description", "Remediation", "Occurrence"]
     parsed_body = parse_include(inbody, include_head, tokens)
-    validation = run_schema_against_parse(loaded_schema, parsed_body)
+    return parsed_body
+
+
+def validate_module_ki(schema, bodyjson):
+    '''A function that sets specific values for the Known Issue module.'''
+    with open(schema) as fh:
+        loaded_schema = json.load(fh)
+    validation = run_schema_against_parse(loaded_schema, bodyjson)
     return validation
 
 

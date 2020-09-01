@@ -25,7 +25,7 @@ import mod_utilities as MU
 from prettytable import PrettyTable
 
 MODULES = r"/usr/local/azs-modular-poc/docfx_project/includes"
-SCHEMA = r"/usr/local/bin/known_issue.json"
+SCHEMA = r"/usr/local/bin/known-issue.json"
 
 def repo_logic(indict):
     '''Insert the logic to process the return from the function.'''

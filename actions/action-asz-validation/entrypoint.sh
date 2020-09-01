@@ -5,9 +5,9 @@ echo "entrypoint running"
 echo "$GITHUB_REPOSITORY"
 echo "$GITHUB_WORKSPACE"
 
-cd /usr/local
+cd "$GITHUB_WORKSPACE"
 git clone https://github.com/mattbriggs/azs-modular-poc.git
 cd azs-modular-poc
-git checkout master
+git checkout "$GITHUB_WORKSPACE"
 
 python /usr/local/bin/val_ki_dockeraction.py
