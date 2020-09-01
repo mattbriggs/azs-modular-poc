@@ -46,7 +46,7 @@ def get_files(inpath, extension):
         for filename in files:
             ext_index = filename.find(".")
             if filename[ext_index+1:] == extension:
-                entry = path + "\\" + filename
+                entry = path + "/" + filename
                 outlist.append(entry)
     return outlist
 
