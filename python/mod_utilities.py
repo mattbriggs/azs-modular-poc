@@ -39,13 +39,13 @@ def write_csv(outbody, path):
     csvout.close()
 
 
-def get_files(inpath):
+def get_files(inpath, extension):
     '''With the directory path, returns a list of markdown file paths.'''
     outlist = []
     for (path, dirs, files) in os.walk(inpath):
         for filename in files:
             ext_index = filename.find(".")
-            if filename[ext_index+1:] == "md":
+            if filename[ext_index+1:] == extension:
                 entry = path + "\\" + filename
                 outlist.append(entry)
     return outlist

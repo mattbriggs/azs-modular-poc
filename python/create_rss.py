@@ -9,8 +9,6 @@ v0.1 5.28.2020
 
 '''
 import os
-#import json
-# import cerebus
 import datetime
 from bs4 import BeautifulSoup
 import markdown
@@ -28,7 +26,7 @@ def get_text_from_file(path):
     return textout
 
 
-def get_files(inpath):
+def get_files(inpath, "md"):
     '''With the directory path, returns a list of markdown file paths.'''
     outlist = []
     for (path, dirs, files) in os.walk(inpath):

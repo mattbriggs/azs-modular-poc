@@ -20,6 +20,10 @@ This article lists known issues in releases of Azure Stack Hub. The list is upda
 [!INCLUDE [notes](../includes/known-issue-a7bc45b7-ebb0-ea11-a812-000d3a5465d8.md)]
 
 
+## Kubernetes
+[!INCLUDE [notes](../includes/known-issue-15799987-988a-4c68-bd67-9e66174176e2.md)]
+
+
 ## Network
 [!INCLUDE [notes](../includes/known-issue-000b8111-eab0-ea11-a812-000d3a5465d8.md)]
 [!INCLUDE [notes](../includes/known-issue-010b8111-eab0-ea11-a812-000d3a5465d8.md)]

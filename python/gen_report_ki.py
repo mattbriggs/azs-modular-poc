@@ -40,7 +40,7 @@ def get_vals_as_list(cols, indict):
 
 def main():
     ''' Parse the include modules and create a report.'''
-    include_paths = MU.get_files(MODULES)
+    include_paths = MU.get_files(MODULES, "md")
     report = []
     headers = []
     for p in include_paths:

@@ -4,15 +4,15 @@
     Input: Path to an include file.
     Output: Displays validation.
 
-    Matt Briggs V1.0.1: 7.29.2020
+    Matt Briggs V1.0.1: 9.1.2020
 '''
 
 import cmd
 import val_ki_functions as VAL
 import mod_utilities as MU
 
-APPVERSION = "Validation CLI Version 1.0.1.20200729\n"
-SCHEMA = r"C:\git\mb\azs-modular-poc\python\schemas\known_issue.json"
+APPVERSION = "Validation CLI Version 1.0.0.20200901\n"
+SCHEMAS = r"C:\git\mb\azs-modular-poc\Model\schemas"
 
 class TagTerminal(cmd.Cmd):
     """Accepts commands via the normal interactive prompt or on the command line."""
@@ -21,11 +21,14 @@ class TagTerminal(cmd.Cmd):
 
     def do_check(self, line):
         '''The main logic of the utility.'''
-
+        
         try:
             module_body = MU.get_textfromMD(line)
+            split_path = line.split("\\")[-1].split("-")
+            module_slug = "{}-{}".format(split_path[0],split_path[1])
             body_parse = VAL.parse_module(module_body)
-            validation = VAL.validate_module_ki(SCHEMA, body_parse )
+            schema_path = VAL.get_schemas(SCHEMAS)
+            validation = VAL.validate_module_ki(schema_path[module_slug], body_parse )
             print(validation)
 
             print("Done")

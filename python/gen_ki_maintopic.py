@@ -19,7 +19,7 @@ import mod_utilities as MU
 
 # variable block
 
-DATAFILE = r"C:\git\mb\azs-modular-poc\python\data\knownissues_report_powerbi.csv"
+DATAFILE = r"C:\git\mb\azs-modular-poc\Data\knownissues_report_powerbi.csv"
 TARGET = "C:\\git\\mb\\azs-modular-poc\\docfx_project\\articles\\known-issues-poc.md"
 THISDATE = str(datetime.now().strftime("%Y-%m-%d"))
 

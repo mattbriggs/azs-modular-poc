@@ -12,7 +12,7 @@ import val_ki_functions as VAL
 
 KNOWNISSUES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
 KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_validation.csv"
-SCHEMA = r"C:\git\mb\azs-modular-poc\python\data\schema_include_beta.json"
+SCHEMA = r"C:\git\mb\azs-modular-poc\Data\schema_include_beta.json"
 KNOWNISSUESREPORT = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_report_powerbi.csv"
 
 KNOWN_ISSUES_SCHEMA = ["ms.issue-id", 
@@ -40,13 +40,13 @@ def get_textfromMD(path):
     return textout
 
 
-def get_files(inpath):
+def get_files(inpath, extension):
     '''With the directory path, returns a list of markdown file paths.'''
     outlist = []
-    for (path, dirs, files) in os.walk(inpath):
+    for (path, dirs, files) in os.walk(extension):
         for filename in files:
             ext_index = filename.find(".")
-            if filename[ext_index+1:] == "md":
+            if filename[ext_index+1:] == extension:
                 entry = path + "\\" + filename
                 outlist.append(entry)
     return outlist
@@ -67,7 +67,7 @@ def write_csv(outbody, path):
 def main():
         '''Parse the known issue includes in the repo.'''
         print("Starting")
-        include_paths = get_files(KNOWNISSUES)
+        include_paths = get_files(KNOWNISSUES, "md")
         report = []
         report.append(KNOWN_ISSUES_SCHEMA)
         for p in include_paths:

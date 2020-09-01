@@ -45,7 +45,7 @@ def main():
     '''
         Validate includes in the repo. (Main Logic for repo parsing)
     '''
-    include_path = MU.get_files(MODULES)
+    include_path = MU.get_files(MODULES, "md")
     report = []
     report.append(["ID", "Valid", "Issue"])
     for p in include_path:

@@ -16,7 +16,7 @@ import csv
 
 # variable block
 
-DATAFILE = r"C:\git\mb\azs-modular-poc\python\data\creeb_azsknownissues.csv"
+DATAFILE = r"C:\git\mb\azs-modular-poc\Data\creeb_azsknownissues.csv"
 TARGET = "C:\\git\\mb\\azs-modular-poc\\docfx_project\\includes\\"
 STEM = "known-issue"
 THISDATE = str(datetime.now().strftime("%Y-%m-%d"))

@@ -5,12 +5,23 @@
     input: module as text, schema file (json)
     output: dict (json) of parsed doc.
 
-    With the following schema:
+    9.1.2020
 
 '''
 
 import cerberus as CB
+import mod_utilities as MU
 import json
+
+
+def get_schemas(path_to_schemas):
+    '''Get the stem and path and create the a dictionary of stems to paths.'''
+    list_of_files = MU.get_files(path_to_schemas, "json")
+    schema_dict = {}
+    for i in list_of_files:
+        stem = i.split("\\")[-1].split(".")[0]
+        schema_dict[stem] = i
+    return schema_dict
 
 
 def validate_base_file(rawbody):
