@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Upload blob with OAuth error
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the user portal, when you try to upload a blob using the OAuth(preview) option, the task fails with an error message.
 - Remediation: Upload the blob using the SAS option.
 - Occurrence: Common

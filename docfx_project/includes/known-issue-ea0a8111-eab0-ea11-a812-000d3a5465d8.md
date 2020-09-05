@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### SQL VM: Auto backup cannot be configured with TLS 1.2 enabled
 
-- Applicable to: This issue applies to new installations of 2002 and later, or any previous release with TLS 1.2 enabled.
+- Applicable to: 2002
 - Description: When configuring the automated backup of SQL VMs with an existing storage account, it fails with the error SQL Server IaaS Agent: The underlying connection was closed: An unexpected error occurred on a send. 
 - Remediation: NA
 - Occurrence: Common

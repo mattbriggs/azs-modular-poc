@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### SQL/MySQL
 
-- Applicable to: This issue applies to release 2002.
+- Applicable to: 2002
 - Description: If the stamp contains SQL resource provider (RP) version 1.1.33.0 or earlier, upon update of the stamp, the blades for SQL/MySQL will not load.
 - Remediation: Update the RP to version 1.1.47.0
 - Occurrence: NA

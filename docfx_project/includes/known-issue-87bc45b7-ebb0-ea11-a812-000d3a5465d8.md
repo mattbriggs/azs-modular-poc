@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Administrative subscriptions
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: The two administrative subscriptions that were introduced with version 1804 should not be used. The subscription types are Metering subscription, and Consumption subscription.
 - Remediation: If you have resources running on these two subscriptions, recreate them in user subscriptions.
 - Occurrence: Common

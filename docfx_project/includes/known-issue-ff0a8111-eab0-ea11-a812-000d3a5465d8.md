@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Virtual machine diagnostic settings blade
 
-- Applicable to: This issue applies to the 1906 and 1907 releases.
+- Applicable to: 1906-1907
 - Description: The virtual machine diagnostic settings blade has a Sink tab, which asks for an Application Insight Account . This is the result of a new blade and is not yet supported in Azure Stack Hub.
 - Remediation: None.
 - Occurrence: Common

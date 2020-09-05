@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Storage account configuration
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the user portal, when you create a storage account and view its Configuration , you cannot save configuration changes, as it results in an AJAX error. 
 - Remediation: NA
 - Occurrence: Common

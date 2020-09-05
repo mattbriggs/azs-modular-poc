@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Alert for invalidate time source
 
-- Applicable to: This issue applies to release 2002 release.
+- Applicable to: 2002
 - Description: After applying the 2002 update, an alert for an "Invalid Time Source" may incorrectly appear in the Administrator portal. This false-positive alert can be ignored and will be fixed in an upcoming release.
 - Remediation: For other known Azure Stack Hub update issues, please see Troubleshooting Updates in Azure Stack Hub.
 - Occurrence: Common

@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Delete a storage container
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the user portal, when a user attempts to delete a storage container, the operation fails when the user does not toggle Override Azure Policy and RBAC Role settings .
 - Remediation: Ensure that the box is checked for Override Azure Policy and RBAC Role settings .
 - Occurrence: Common

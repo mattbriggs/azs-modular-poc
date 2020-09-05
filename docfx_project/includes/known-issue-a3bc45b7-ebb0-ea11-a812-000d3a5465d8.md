@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Duplicate Subscription button in Lock blade
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the administrator portal, the Lock blade for user subscriptions has two buttons labeled subscription . 
 - Remediation: NA
 - Occurrence: Common

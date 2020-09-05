@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Storage account options
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the user portal, the name of storage accounts is shown as Storage account - blob, file, table, queue ; however, file is not supported in Azure Stack Hub. 
 - Remediation: NA
 - Occurrence: Common

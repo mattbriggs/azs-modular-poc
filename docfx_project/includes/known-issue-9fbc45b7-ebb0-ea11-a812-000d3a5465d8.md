@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Activity log blade
 
-- Applicable to: This issue applies to stamps that are running 1907 or later.
+- Applicable to: 1907
 - Description: When accessing the activity log, the portal only shows the first page of entries. Load more results will not load addition entries.
 - Remediation: Adjust the time range in the filter to review entries that fall after the first page
 - Occurrence: NA

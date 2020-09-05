@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Subscription permissions
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: You cannot view permissions to your subscription using the Azure Stack Hub portals.
 - Remediation: Use PowerShell to verify permissions .
 - Occurrence: Common

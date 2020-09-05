@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Issues creating resources
 
-- Applicable to: This issue applies to the 1906 release.
+- Applicable to: 1906
 - Description: There is a known issue in 1906 with custom roles and permission allocation for resource creation. You might face issues creating resources even if you have the correct permissions.
 - Remediation: Please update to build 1907 to mitigate this issue.
 - Occurrence: Common

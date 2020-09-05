@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Upload blob option unsupported
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the user portal, when you try to upload a blob in the upload blade, there is an option to select AAD or Key Authentication , however AAD is not supported in Azure Stack Hub. 
 - Remediation: NA
 - Occurrence: Common

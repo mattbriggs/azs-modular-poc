@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Create Managed Disk snapshot
 
-- Applicable to: This issue applies to release 2002.
+- Applicable to: 2002
 - Description: In the user portal, when creating a Managed Disk snapshot, the Account type box is empty. When you select the Create button with an empty account type, the snapshot creation fails.
 - Remediation: Select an account type from the Account type dropdown list, then create the snapshot.
 - Occurrence: Common

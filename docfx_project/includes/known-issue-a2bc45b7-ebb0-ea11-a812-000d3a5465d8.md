@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Subscriptions Properties blade
 
-- Applicable to: This issue applies to all supported releases.
+- Applicable to: all
 - Description: In the administrator portal, the Properties blade for subscriptions does not load correctly
 - Remediation: You can view these subscription properties in the Essentials pane of the Subscriptions Overview blade.
 - Occurrence: Common

@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### Alert for network interface disconnected
 
-- Applicable to: This issue applies to the 1908 release.
+- Applicable to: 1908
 - Description: When a cable is disconnected from a network adapter, an alert does not show in the administrator portal. This issue is caused because this fault is disabled by default in Windows Server 2019. 
 - Remediation: NA
 - Occurrence: Common

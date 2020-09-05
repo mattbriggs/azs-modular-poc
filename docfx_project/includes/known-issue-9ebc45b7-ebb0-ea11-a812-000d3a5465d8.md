@@ -16,7 +16,7 @@ azs.highlight: False
 ---
 ### SQL resource provider
 
-- Applicable to: This issue applies to stamps that are running 1908 or earlier.
+- Applicable to: 1908
 - Description: When deploying the SQL resource provider (RP) version 1.1.47.0, the portal shows no assets other than those associated with the SQL RP.
 - Remediation: Delete the RP, upgrade the stamp, and re-deploy the SQL RP
 - Occurrence: NA
