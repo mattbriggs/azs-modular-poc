@@ -31,7 +31,6 @@ def main():
     include_paths = MU.get_files(MODULES, "md")
     schema_paths = VAL.get_schemas(SCHEMAS)
     schema_set = set(schema_paths.keys())
-    print(schema_set)
     report = []
     report.append(["issueid", "validation status", "path", "error"])
     validatation_state = True
