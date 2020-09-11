@@ -64,7 +64,6 @@ def main():
         if path_slug in schema_set:
             in_body = MU.get_textfromMD(p)
             valid_id = p.split("/")[-1][:-3]
-            print("Validating module {} for {}".format(path_slug, valid_id[slug_index:]))
             try:
                 if VAL.validate_base_file(in_body):
                     body_parse = VAL.parse_module(in_body)
