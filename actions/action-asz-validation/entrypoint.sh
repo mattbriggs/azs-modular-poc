@@ -12,11 +12,11 @@ state=`cat state.txt`
 
 echo $state
 
-if [ $state=="True" ] ; then
+if [ $state == "True" ] ; then
   echo "All is well."
 fi
 
-if [ $state=="False" ]; then
+if [ $state == "False" ]; then
   echo "Game over!"
   exit 1
 fi
