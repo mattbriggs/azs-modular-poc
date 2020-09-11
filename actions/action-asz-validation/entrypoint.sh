@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "entrypoint running"
-echo "$GITHUB_REPOSITORY"
-echo "$GITHUB_WORKSPACE"
+state = "True"
 
 cd /usr/local
 git clone https://github.com/mattbriggs/azs-modular-poc.git
@@ -12,3 +10,12 @@ git checkout master
 
 python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py
 
+
+if [ state == "True" ] ; then
+  echo "All is well."
+fi
+
+if [ state == "False" ]; then
+  echo "Game over!"
+  exit 1
+fi
