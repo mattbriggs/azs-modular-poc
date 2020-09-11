@@ -72,18 +72,18 @@ def main():
                     body_parse = VAL.parse_module(in_body)
                     v_line = VAL.validate_module_ki(schema_paths[path_slug], body_parse)
                     if v_line["summary"]:
-                        report.append([valid_id, v_line["summary"], p, "No error."])
+                        report.append([valid_id, v_line["summary"], "No error."])
                     else:
                         validatation_state = False
                         fields = list(v_line["details"].keys())
                         for f in fields:
                             error_message = "{}: {}".format(v_line["details"][f][0], f)
-                            report.append([valid_id, v_line["summary"], p, error_message ])
+                            report.append([valid_id, v_line["summary"],error_message ])
                 else:
-                    report.append([valid_id, False, p, "Not a valid include file."])
+                    report.append([valid_id, False, "Not a valid include file."])
                     validatation_state = False
             except Exception as e:
-                    report.append([valid_id, False, p, "Not a valid include file. {}".format(e)])
+                    report.append([valid_id, False, "Not a valid include file. {}".format(e)])
                     validatation_state = False
     output_table(report)
     print("The repository is valid: {}".format(validatation_state))
