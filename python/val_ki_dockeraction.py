@@ -85,7 +85,7 @@ def main():
     output_table(report)
     print("The repository is valid: {}".format(validatation_state))
     if not validatation_state:
-        print('state == "False"')
+        print('state="False"')
 
 if __name__ == "__main__":
     main()
