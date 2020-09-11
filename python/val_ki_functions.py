@@ -25,8 +25,8 @@ def get_schemas(path_to_schemas):
 
 
 def get_schemas_linux(path_to_schemas):
-        list_of_files = MU.get_files(path_to_schemas, "json")
     '''Linux version: Get the stem and path and create the a dictionary of stems to paths.'''
+    list_of_files = MU.get_files(path_to_schemas, "json")
     schema_dict = {}
     for i in list_of_files:
         stem = i.split("\\")[-1].split(".")[0]
