@@ -45,21 +45,21 @@ def main():
     '''
         Validate includes in the repo. (Main Logic for repo parsing)
     '''
-    include_paths = MU.get_files(MODULES, "md")
+    include_paths = MU.get_files(MODULES, "md").replace("\\", "/")
     print(include_paths)
-    schema_paths = VAL.get_schemas(SCHEMAS)
+    schema_paths = VAL.get_schemas(SCHEMAS).replace("\\", "/")
     print(schema_paths)
     schema_set = set(schema_paths.keys())
     report = []
     report.append(["ID", "Valid", "Issue"])
     validatation_state = True
     for p in include_paths:
-        split_path = p.split("\\")[-1].split("-")
+        split_path = p.split("/")[-1].split("-")
         path_slug = "{}-{}".format(split_path[0],split_path[1])
         slug_index = len(path_slug)
         if path_slug in schema_set:
             in_body = MU.get_textfromMD(p)
-            valid_id = p.split("\\")[-1][:-3]
+            valid_id = p.split("/")[-1][:-3]
             print("Validating module {} for {}".format(path_slug, valid_id[slug_index:]))
             try:
                 if VAL.validate_base_file(in_body):
