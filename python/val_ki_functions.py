@@ -24,6 +24,16 @@ def get_schemas(path_to_schemas):
     return schema_dict
 
 
+def get_schemas_linux(path_to_schemas):
+        list_of_files = MU.get_files(path_to_schemas, "json")
+    '''Linux version: Get the stem and path and create the a dictionary of stems to paths.'''
+    schema_dict = {}
+    for i in list_of_files:
+        stem = i.split("\\")[-1].split(".")[0]
+        schema_dict[stem] = i.replace("\\", "/")
+    return schema_dict
+
+
 def validate_base_file(rawbody):
     '''With a file incoming check that is really markdown with a metadata block.'''
     base_valid = {}

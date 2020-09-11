@@ -53,7 +53,7 @@ def main():
     '''
     include_paths = fix_path(MU.get_files(MODULES, "md"))
     print(include_paths)
-    schema_paths = fix_path(VAL.get_schemas(SCHEMAS))
+    schema_paths = VAL.get_schemas_linux(SCHEMAS)
     print(schema_paths)
     schema_set = set(schema_paths.keys())
     report = []
