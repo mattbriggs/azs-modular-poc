@@ -6,7 +6,9 @@ git clone https://github.com/mattbriggs/azs-modular-poc.git
 cd azs-modular-poc
 git checkout master
 
-state=`python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py | state -n 1`
+python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py
+
+state=`cat state.txt`
 
 echo $state
 
