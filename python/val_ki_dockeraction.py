@@ -85,7 +85,7 @@ def main():
     output_table(report)
     print("The repository is valid: {}".format(validatation_state))
     if not validatation_state:
-        print("echo ::set-output name=exit::1")
+        print("exit 1")
 
 if __name__ == "__main__":
     main()
