@@ -11,3 +11,9 @@ cd azs-modular-poc
 git checkout master
 
 python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py
+
+echo "$VALID="
+if [ "$VALID=" == "False" ] ; then
+  echo "Not valid."
+  exit 1
+fi

@@ -85,6 +85,7 @@ def main():
                     validatation_state = False
     output_table(report)
     print("The repository is valid: {}".format(validatation_state))
+    print("$VALID={}".format(validatation_state))
 
 if __name__ == "__main__":
     main()
