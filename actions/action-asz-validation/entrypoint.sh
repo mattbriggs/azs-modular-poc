@@ -13,6 +13,7 @@ python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py
 
 if [ $state == "True" ] ; then
   echo "All is well."
+  exit 1
 fi
 
 if [ $state == "False" ]; then
