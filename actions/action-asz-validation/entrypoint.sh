@@ -10,4 +10,4 @@ git clone https://github.com/mattbriggs/azs-modular-poc.git
 cd azs-modular-poc
 git checkout master
 
-python /usr/local/bin/val_ki_dockeraction.py
+python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py
