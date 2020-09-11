@@ -1,19 +1,16 @@
 #!/bin/bash
 set -e
 
-state="True"
-
 cd /usr/local
 git clone https://github.com/mattbriggs/azs-modular-poc.git
 cd azs-modular-poc
 git checkout master
 
-python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py
-
+state=$(python /usr/local/azs-modular-poc/python/val_ki_dockeraction.py)
+echo $state
 
 if [ $state == "True" ] ; then
   echo "All is well."
-  exit 1
 fi
 
 if [ $state == "False" ]; then
