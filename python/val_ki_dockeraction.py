@@ -83,7 +83,7 @@ def main():
                     report.append([valid_id, False, "Not a valid include file. {}".format(e)])
                     validatation_state = False
     #output_table(report)
-    print("The repository is valid: {}".format(validatation_state))
+    #print("The repository is valid: {}".format(validatation_state))
     return validatation_state
 
 if __name__ == "__main__":
