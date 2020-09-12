@@ -6,3 +6,5 @@
   href: known-issues-orginal.md
 - name: Known issues (poc)
   href: known-issues-poc.md
+- name: Data driven graphics
+  href: graphic-test.md
