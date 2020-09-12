@@ -1,0 +1,8 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'. 
+level: warning
+ignorecase: false
+# Cloud Solution Provider (CSP).
+swap:
+  Cloud Service Provider: Cloud Solution Provider
+  cloud service provider: Cloud Solution Provider

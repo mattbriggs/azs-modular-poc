@@ -1,0 +1,3 @@
+[submodule "Microsoft"]
+	path = /data/vale/Microsoft
+	url = https://github.com/errata-ai/Microsoft.git

@@ -1,0 +1,10 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'.
+level: warning
+ignorecase: false
+# Azure Stack User Guide: entry for "multi-tenancy".
+swap:
+  multitenancy: multi-tenancy
+  multi-tenant: multi-tenancy
+  multitenant: multi-tenancy
+  mutiple tenants: multi-tenancy

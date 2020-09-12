@@ -10,7 +10,7 @@ import csv
 
 # update variables
 
-KNOWNISSUES = r"C:\git\mb\azs-modular-poc\Data\preparse.md"
+KNOWNISSUES = r"C:\git\mb\azs-modular-poc\data\reports\preparse.md"
 KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_raw.csv"
 
 

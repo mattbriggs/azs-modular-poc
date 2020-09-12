@@ -1,0 +1,14 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'
+level: warning
+ignorecase: false
+# Azure Stack portal 
+swap:
+  Azure Stack operator portal: Azure Stack administrator portal
+  Azure Stack portal: Azure Stack administrator portal
+  admin portal: Azure Stack administrator portal
+  administrative portal: Azure Stack administrator portal
+  administration portal: Azure Stack administrator portal
+  operator portal: Azure Stack administrator portal
+  tenant portal: types
+  user portal: Azure Stack user portal

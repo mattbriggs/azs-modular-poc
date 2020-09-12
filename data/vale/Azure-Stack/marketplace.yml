@@ -1,0 +1,10 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'
+level: warning
+ignorecase: false
+# Azure Stack Marketplace 
+swap:
+  the Azure Stack marketplace: Azure Stack Marketplace
+  the Azure Stack Marketplace: Azure Stack Marketplace
+  the marketplace: Azure Stack Marketplace
+  the Marketplace: Azure Stack Marketplace

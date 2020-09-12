@@ -20,8 +20,8 @@ import val_ki_functions as VAL
 import mod_utilities as MU
 
 MODULES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
-SCHEMAS = r"C:\git\mb\azs-modular-poc\Model\schemas"
-VALIDATIONREPORT = "C:\\git\\mb\\azs-modular-poc\\Data\\validation_report_validation.csv"
+SCHEMAS = r"C:\git\mb\azs-modular-poc\models\schemas"
+VALIDATIONREPORT = "C:\\git\\mb\\azs-modular-poc\\data\\reports\\validation_report_validation.csv"
 
 
 def main():

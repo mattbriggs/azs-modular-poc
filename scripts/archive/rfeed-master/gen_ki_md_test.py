@@ -23,7 +23,7 @@ def test_build_include():
 
 def test_get_data_from_csv():
     '''Test to see if the sort and transform works correcty.'''
-    testcsv = r"C:\git\mb\azs-modular-poc\Data\creeb_validator.csv"
+    testcsv = r"C:\git\mb\azs-modular-poc\data\reports\creeb_validator.csv"
     testlist =  gki.get_data_from_csv(testcsv)
     test_item = testlist[0][1]
     valid_item = "azs-1046"

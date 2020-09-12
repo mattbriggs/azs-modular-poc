@@ -1,0 +1,7 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'. 
+level: warning
+ignorecase: false
+# Azure Stack Hub validation as a service.
+swap:
+  Validation as a Service: validation as a service

@@ -1,0 +1,7 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'. 
+level: warning
+ignorecase: false
+# Azure Resource Manager.
+swap:
+  ARM: Azure Resource Manager or Resource Manager

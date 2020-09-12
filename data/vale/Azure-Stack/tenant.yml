@@ -1,0 +1,7 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'. Avoid using, except when technical specificity is important. Use org or organization instead."
+level: warning
+ignorecase: false
+# Azure Stack User Guide: entry for "tenant".
+swap:
+  tenant: user

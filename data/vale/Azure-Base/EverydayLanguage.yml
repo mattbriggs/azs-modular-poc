@@ -1,0 +1,64 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'
+level: warning
+ignorecase: false
+# Use everyday langauge. 
+swap:
+  access: use
+  acquire: get
+  administrator: admin
+  application: app
+  allows: lets
+  alternate: switch
+  as: because
+  categories: types
+  check box: box
+  clear: uncheck
+  click: select
+  complete: finish
+  configure: set up
+  contains: has
+  correct: fix
+  determine: check
+  displays: shows
+  do the following: follow these steps
+  drag and drop: drag
+  due to: because
+  elect: choose
+  e-mail: email
+  enable: let
+  enables: lets
+  enter a maximum of: type up to
+  execute: run
+  forward: next
+  halt: pause
+  however: but
+  illegal: not valid
+  impact: affect (verb)
+  impacting: affecting
+  impactful: affective
+  internet browser: browser
+  mail: email
+  media: music
+  modify: change
+  navigate: go
+  obtain: get
+  occurs: happens
+  operation: action
+  perform: do
+  provision: set up
+  provisioning: setting up
+  purchase: buy
+  repair: fix
+  resolve: fix
+  such as: like
+  suspend: pause
+  synchronize: sync
+  terminate: end
+  type: enter
+  unavailable: dimmed
+  understand: learn
+  various: different
+  verify: check
+  visit: go to
+  web browser: browser

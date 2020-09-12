@@ -12,7 +12,7 @@ import val_ki_functions as VAL
 
 KNOWNISSUES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
 KNOWNISSUESTABLE = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_validation.csv"
-SCHEMA = r"C:\git\mb\azs-modular-poc\Data\schema_include_beta.json"
+SCHEMA = r"C:\git\mb\azs-modular-poc\data\reports\schema_include_beta.json"
 KNOWNISSUESREPORT = "C:\\git\\mb\\azs-modular-poc\\python\\data\\knownissues_report_powerbi.csv"
 
 KNOWN_ISSUES_SCHEMA = ["ms.issue-id", 
