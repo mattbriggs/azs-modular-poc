@@ -27,7 +27,7 @@ import mod_utilities as MU
 MODULES = r"C:\git\mb\azs-modular-poc\docfx_project\includes"
 SCHEMA = r"C:\git\mb\azs-modular-poc\python\schemas\known_issue.json"
 SLUG = "known-issue"
-POWERBIREPORT = "C:\\git\\mb\\azs-modular-poc\\Data\\knownissues_report_powerbi.csv"
+POWERBIREPORT = "C:\\git\\mb\\azs-modular-poc\\data\\reports\knownissues_report_powerbi.csv"
 
 
 def get_vals_as_list(cols, indict):

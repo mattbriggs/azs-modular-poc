@@ -9,7 +9,7 @@ ms.lastreviewed: 2020-09-16
 ms.sub-service: Cloud Operator Issues
 azs.tracking: 999999
 azs.issue-id: known-issue-97e5d3ad-cb96-4401-b0eb-90667cf51bd7 
-azs.status: in-review 
+azs.status: active
 azs.topic-schema: known-issue 
 azs.audience: Operator
 azs.highlight: False

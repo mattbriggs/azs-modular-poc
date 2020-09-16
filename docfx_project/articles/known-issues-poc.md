@@ -4,10 +4,10 @@ description: Learn about known issues in Azure Stack Hub releases.
 author: sethmanheim
 
 ms.topic: article
-ms.date: 2020-08-27
+ms.date: 2020-09-16
 ms.author: sethm
 ms.reviewer: sranthar
-ms.lastreviewed: 2020-08-27
+ms.lastreviewed: 2020-09-16
 ---
 
 # Azure Stack Hub known issues
@@ -18,6 +18,10 @@ This article lists known issues in releases of Azure Stack Hub. The list is upda
 
 ## App Services
 [!INCLUDE [notes](../includes/known-issue-a7bc45b7-ebb0-ea11-a812-000d3a5465d8.md)]
+
+
+## Cloud Operator Issues
+[!INCLUDE [notes](../includes/known-issue-97e5d3ad-cb96-4401-b0eb-90667cf51bd7.md)]
 
 
 ## Kubernetes
