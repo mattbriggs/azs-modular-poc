@@ -22,7 +22,7 @@ The following class diagram was generated using Mermaid. For more information ab
 
 Animals and ducks and fish.
 
-![This is the first test image](../images/test.svg)
+![This is the first test image](/images/test.svg)
 
 ## Next steps
 

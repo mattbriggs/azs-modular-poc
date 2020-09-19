@@ -37,7 +37,7 @@ def get_schemas_linux(path_to_schemas):
 def validate_base_file(rawbody):
     '''With a file incoming check that is really markdown with a metadata block.'''
     base_valid = {}
-    sections = rawbody.split("---\n")
+    sections = rawbody.split("---")
     if len(sections) == 3:
         base_valid["metablock"] = True
     else:
@@ -54,7 +54,7 @@ def parse_include(inbody, include_head, tokens):
     '''Method parses an include file.'''
 
     # break body
-    parts = inbody.split("---\n")
+    parts = inbody.split("---")
     elements = parts[2].split("- ")
 
     # get body

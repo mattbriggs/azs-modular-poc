@@ -20,7 +20,7 @@ import mod_utilities as MU
 # variable block
 
 DATAFILE = r"C:\git\mb\azs-modular-poc\data\reports\knownissues_report_powerbi.csv"
-TARGET = "C:\\git\\mb\\azs-modular-poc\\docfx_project\\articles\\known-issues-poc.md"
+TARGET = "C:\\git\\mb\\azs-modular-poc\\docfx_project\\articles\\poc\\known-issues-poc.md"
 THISDATE = str(datetime.now().strftime("%Y-%m-%d"))
 
 # template block
@@ -70,7 +70,7 @@ def main():
         print("Getting issues for {}...\n".format(feature_area))
         knownissuesfile += feature_area
         for i in group['azs.issue-id'].get_values():
-            issue = "[!INCLUDE [notes](../includes/{}.md)]\n".format(i)
+            issue = "[!INCLUDE [notes](../../includes/{}.md)]\n".format(i)
             knownissuesfile += issue
     knownissuesfile += endblock
     MU.write_text(knownissuesfile, TARGET)
