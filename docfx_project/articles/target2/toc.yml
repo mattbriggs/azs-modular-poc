@@ -1,0 +1,6 @@
+- name: Article 1 - shared
+  href: ../stock/article1.md
+- name: Article 3
+  href: ../stock/article3.md
+- name: Article 4
+  href: ../stock/article4.md
