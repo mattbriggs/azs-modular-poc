@@ -11,14 +11,13 @@ Publication Process in the AzS Hub Content Strategy OneNote.
 
 from datetime import datetime
 import pandas as pd
-import numpy as np
 
 import mod_utilities as MU
 
 # variable block
 
 DATAFILE = r"C:\git\mb\azs-modular-poc\data\reports\knownissues_report_powerbi.csv"
-TARGETBASE = "C:\\git\\mb\\azs-modular-poc\\docfx_project\\articles\\"
+TARGETBASE = "C:\\git\\mb\\azs-modular-poc\\docfx_project\\articles"
 THISDATE = str(datetime.now().strftime("%Y-%m-%d"))
 
 
@@ -41,7 +40,7 @@ ms.lastreviewed: {}
 
 This article lists known issues in releases of Azure Stack Hub. The list is updated as new issues are identified.
 
-'''.format(RP, RP, THISDATE, THISDATE)
+'''.format(RP, THISDATE, THISDATE, RP)
 
     return metadatablock
 
@@ -62,7 +61,7 @@ To access archived known issues for an older version, use the version selector d
 
 
 def build_known_issues():
-    ''' '''
+    '''Builds the known issue files from the data.'''
     data = pd.read_csv(DATAFILE)
 
     active_items = data.loc[(data['azs.status'] == 'active')]
@@ -71,25 +70,33 @@ def build_known_issues():
     audience = rp.groupby('azs.audience')
     for a in audience:
         a_stem = a[0].lower()
-        print(a_stem)
         groups = a[1].groupby('ms.sub-service')
         for g in groups:
             rp_stem = g[0].replace(" ", "-").lower()
-            file_name = "target/{}/{}.md".format(a_stem, rp_stem)
-            print(file_name)
-            print("-- start file -- \n")
+            knownissuesfile = build_top_block(g[0])
+            file_name = "{}\\{}\\{}.md".format(TARGETBASE, a_stem, rp_stem)
+            print("Creating {}".format(file_name))
             releases = g[1].groupby('Applicable to')
             for r in releases:
-                print('::: moniker range="<azs-{}"'.format(r[0]))
+                start_release = '::: moniker range="<azs-{}"\n'.format(r[0])
+                knownissuesfile += start_release
                 items = r[1].groupby('azs.issue-id')
                 for i in items:
-                    print("![INCLUDE](/azure-stack/include/{}0.md".format(i[0]))
-                print("::: moniker-end")
-            print("-- end file -- \n")
+                    item = "![INCLUDE](/azure-stack/include/{}0.md)\n".format(i[0])
+                    knownissuesfile += item
+                end_release = "::: moniker-end\n"
+                knownissuesfile += end_release
+                knownissuesfile += build_end_block()
+            try:
+                MU.write_text(knownissuesfile, file_name)
+            except Exception as e:
+                print("Problem writing to {}. Problem: {}".format(file_name, e))
 
 def main():
     '''Build and save the RP files.'''
+    print("Starting to build topics.")
     build_known_issues()
+    print("Done building topics.")
 
 if __name__ == "__main__":
     main()
