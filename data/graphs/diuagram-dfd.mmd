@@ -1,0 +1,13 @@
+graph TB
+    A[Student]
+    B(Take Certificate Course)
+    C(Certificate Application)
+    D(Take Certificate Test)
+    E[(Student Record)]
+    F[Training and Certificate Board]
+    A-- request -->B
+    B-- approval -->A
+    B --> C
+    C --> D
+    B-- courseEnrollment ---E
+    D-- testResult -->F

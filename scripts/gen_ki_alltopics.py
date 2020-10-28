@@ -1,6 +1,6 @@
 '''4567890123456789012345678901234567890123456789012345678901234567890
 
-Azure Stack Generate individual rp topiocs
+Azure Stack Generate individual rp topics
 
 You can find the sketch of this process at: 2020.6.18 - Initial
 Publication Process in the AzS Hub Content Strategy OneNote.
